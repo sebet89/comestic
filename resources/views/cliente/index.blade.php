@@ -1,9 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'Cadastro de Cliente')
+@section('title', trans('adminlte::adminlte.title.client'))
 
 @section('content_header')
-    <h1>Cadastro de Cliente</h1>
+    <div class="btn-group" style="float:right">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Ações <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li><a href="{{route('cliente.create')}}"><i class="fa fa-plus"></i>{{ trans('adminlte::adminlte.create') }}</a></li>
+        </ul>
+    </div>
+
+    <h1>{{trans('adminlte::adminlte.title.client')}}</h1>
 @stop
 
 @section('content')

@@ -10,8 +10,8 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' => 'Peterson Alves',
-            'email' => 'peterson@sixcreative.com.br',
-            'password' => bcrypt('mandrake')
+            'email' => 'peteson89@hotmail.com',
+            'password' => bcrypt('123456')
         ]);
     }
 }

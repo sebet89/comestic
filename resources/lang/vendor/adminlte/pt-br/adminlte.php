@@ -21,11 +21,22 @@ return [
     'send_password_reset_link'    => 'Enviar link de recuperação de senha',
     //News
     'actions'                     => 'Ações',
+    'create'                      => 'Criar',
     'edit'                        => 'Editar',
     'delete'                      => 'Excluir',
     'address'                     => 'Endereço',
+    'info_basics'                 => 'Informações Básicas',
+    'brands'                      => 'Marcas',
+    'phone'                       => 'Telefone',
+    'cell'                        => 'Celular',
+    'operator'                    => 'Operadora',
+
 
     'role' => [
         'client' => 'Clientes',
+    ],
+
+    'title' => [
+        'client' => 'Cadastro de Cliente',
     ],
 ];
