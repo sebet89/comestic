@@ -7,28 +7,11 @@ class ClientesTableSeeder extends Seeder
 {
     public function run()
     {
-        Cliente::create([
-            'name' => 'Cliente teste',
-            'endereco' => 'Rua Teste da Silva',
-            'email' => 'cliente@teste.com',
-        ]);
-
-        Cliente::create([
-            'name' => 'Cliente teste2',
-            'endereco' => 'Rua Teste da Silva2',
-            'email' => 'cliente2@teste.com',
-        ]);
-
-        Cliente::create([
-            'name' => 'Cliente teste3',
-            'endereco' => 'Rua Teste da Silva3',
-            'email' => 'cliente3@teste.com',
-        ]);
-
-        Cliente::create([
-            'name' => 'Cliente teste4',
-            'endereco' => 'Rua Teste da Silva4',
-            'email' => 'cliente4@teste.com',
-        ]);
+        for($x=0;$x<20;$x++)
+            Cliente::create([
+                'name' => 'Cliente teste '.$x,
+                'endereco' => 'Rua Teste da Silva '.$x,
+                'email' => 'cliente@teste.com '.$x,
+            ]);
     }
 }

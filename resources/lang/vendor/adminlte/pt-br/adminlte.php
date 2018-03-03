@@ -19,4 +19,13 @@ return [
     'password_reset_message'      => 'Recuperar senha',
     'reset_password'              => 'Recuperar senha',
     'send_password_reset_link'    => 'Enviar link de recuperação de senha',
+    //News
+    'actions'                     => 'Ações',
+    'edit'                        => 'Editar',
+    'delete'                      => 'Excluir',
+    'address'                     => 'Endereço',
+
+    'role' => [
+        'client' => 'Clientes',
+    ],
 ];

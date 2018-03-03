@@ -17,7 +17,7 @@ return [
 
     'title_prefix' => '',
 
-    'title_postfix' => 'Sistema de Gestão',
+    'title_postfix' => '',
 
     /*
     |--------------------------------------------------------------------------
