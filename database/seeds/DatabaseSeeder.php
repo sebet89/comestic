@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PhoneClientesTableSeeder::class);
         $this->call(BrandsTableSeeder::class);
         $this->call(CampaignsTableSeeder::class);
+        $this->call(BrandClientesTableSeeder::class);
     }
 }

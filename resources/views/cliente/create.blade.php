@@ -35,26 +35,26 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade in active" id="basicTab">
                                 <div class="box-body with-border">
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="name">{{trans('adminlte::adminlte.full_name')}}:</label>
                                         <input type="text" name="name" id="name" class="form-control" required>
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="email">{{trans('adminlte::adminlte.email')}}:</label>
                                         <input type="email" name="email" id="email" class="form-control" required>
                                     </div>
-                                    <div class="form-group col-md-3">
-                                        <label for="phone">{{trans('adminlte::adminlte.phone')}}:</label>
-                                        <input type="text" name="telefone" id="telefone" class="form-control" required>
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label for="cell">{{trans('adminlte::adminlte.cell')}}:</label>
-                                        <input type="text" name="celular" id="celular" class="form-control" required>
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label for="operator">{{trans('adminlte::adminlte.operator')}}:</label>
-                                        <input type="text" name="operadora" id="operadora" class="form-control" required>
-                                    </div>
+                                    {{--<div class="form-group col-md-3">--}}
+                                        {{--<label for="phone">{{trans('adminlte::adminlte.phone')}}:</label>--}}
+                                        {{--<input type="text" name="telefone" id="telefone" class="form-control" required>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group col-md-3">--}}
+                                        {{--<label for="cell">{{trans('adminlte::adminlte.cell')}}:</label>--}}
+                                        {{--<input type="text" name="celular" id="celular" class="form-control" required>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group col-md-3">--}}
+                                        {{--<label for="operator">{{trans('adminlte::adminlte.operator')}}:</label>--}}
+                                        {{--<input type="text" name="operadora" id="operadora" class="form-control" required>--}}
+                                    {{--</div>--}}
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="addressTab">
