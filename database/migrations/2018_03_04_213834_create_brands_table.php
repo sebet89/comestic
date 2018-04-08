@@ -4,22 +4,24 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClientesTable extends Migration
+class CreateBrandsTable extends Migration
 {
+
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('name')->unique();
+            $table->string('link')->unique();
+            $table->string('login_sist')->nullable();
+            $table->string('password_sist')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
-
-            $table->index('name');
         });
     }
+
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('brands');
     }
 }

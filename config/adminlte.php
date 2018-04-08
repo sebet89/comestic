@@ -108,7 +108,7 @@ return [
     */
 
     'menu' => [
-       'Área do Cliente',
+       'ÁREA DO CLIENTE',
 //        [
 //            'text' => 'Blog',
 //            'url'  => 'blog',
