@@ -21,5 +21,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('cliente', 'ClienteController');
+    Route::get('/api/cep/{cep}', 'ApiController@cep')->name('api.cep');
 
 });

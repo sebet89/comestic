@@ -30,6 +30,16 @@ return [
     'phone'                       => 'Telefone',
     'cell'                        => 'Celular',
     'operator'                    => 'Operadora',
+    'type_phone'                  => 'Tipo do Telefone',
+    'number'                      => 'Número',
+    'number_phone'                => 'Número do Telefone',
+    'obs'                         => 'Obs',
+    'phones'                      => 'Telefones',
+    'neighborhood'                => 'Bairro',
+    'zipcode'                     => 'Cep',
+    'city'                        => 'Cidade',
+    'uf'                          => 'UF',
+    'complement'                  => 'Complemento',
 
 
     'role' => [

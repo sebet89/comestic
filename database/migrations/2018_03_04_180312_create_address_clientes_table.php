@@ -18,11 +18,12 @@ class CreateAddressClientesTable extends Migration
             $table->integer('id_cliente')->unsigned();
             $table->string('endereco');
             $table->string('bairro');
-            $table->string('cidade');
+            $table->string('cidade',28);
             $table->string('uf',2);
             $table->string('cep',9);
             $table->string('numero',9);
             $table->string('complemento')->nullable();
+            $table->string('obs')->nullable();
             $table->timestamps();
 
             $table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade');
