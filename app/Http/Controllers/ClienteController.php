@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\AddressCliente;
+use App\Models\Brand;
 
 class ClienteController extends Controller
 {
@@ -14,11 +15,12 @@ class ClienteController extends Controller
     }
 
     public function create(){
-        return view('cliente.create');
+        $brands = Brand::all();
+        return view('cliente.create', compact('brands'));
     }
 
     public function store(){
-        //
+        dd("foi");
     }
 
     public function show(){

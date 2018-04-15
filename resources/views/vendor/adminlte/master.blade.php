@@ -52,8 +52,20 @@
 <script src="{{ asset('vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 <script>
+    //Masks
     $('.cel_with_ddd').mask('(00) 00000-0000');
     $('.cep').mask('00000-000');
+
+    //Requireds
+    function alertRequired(campo){
+        alert("O campo '"+campo.title+"' é obrigatório");
+        $('[for='+campo.id+']').css('color', 'red');
+    }
+
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
 </script>
 
 @if(config('adminlte.plugins.select2'))
@@ -61,6 +73,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script>
         $('.select2').select2();
+        $('.select2-multitextarea').select2({
+            placeholder: "Marcas",
+            width: "100%"
+        })
     </script>
 @endif
 

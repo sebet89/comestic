@@ -55,6 +55,7 @@
                                             <option></option>
                                             <option value="Celular">Celular</option>
                                             <option value="Residência">Residência</option>
+                                            <option value="Trabalho">Trabalho</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
@@ -62,11 +63,15 @@
                                         <input type="text" name="numeroTel[]" id="numeroTel" class="form-control cel_with_ddd" title="{{trans('adminlte::adminlte.number_phone')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="operadoraTel">{{trans('adminlte::adminlte.operator')}}:</label> <span class="required">*</span>
-                                        <select id="operadoraTel" name="operadoraTel[]" class="form-control select2" title="{{trans('adminlte::adminlte.operator')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <label for="operadoraTel">{{trans('adminlte::adminlte.operator')}}:</label>
+                                        <select id="operadoraTel" name="operadoraTel[]" class="form-control select2">
                                             <option></option>
                                             <option value="Tim">Tim</option>
                                             <option value="Claro">Claro</option>
+                                            <option value="Vivo">Vivo</option>
+                                            <option value="Oi">Oi</option>
+                                            <option value="Nextel">Nextel</option>
+                                            <option value="Outro">Outro</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
@@ -79,6 +84,7 @@
                                             <option></option>
                                             <option value="Celular">Celular</option>
                                             <option value="Residência">Residência</option>
+                                            <option value="Trabalho">Trabalho</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
@@ -91,6 +97,10 @@
                                             <option></option>
                                             <option value="Tim">Tim</option>
                                             <option value="Claro">Claro</option>
+                                            <option value="Vivo">Vivo</option>
+                                            <option value="Oi">Oi</option>
+                                            <option value="Nextel">Nextel</option>
+                                            <option value="Outro">Outro</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
@@ -105,12 +115,12 @@
                             <div role="tabpanel" class="tab-pane fade in" id="addressTab">
                                 <div class="box-body with-border">
                                     <div class="form-group col-md-6">
-                                        <label for="addressEnd">{{trans('adminlte::adminlte.address')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="addressEnd" id="addressEnd" class="form-control" readonly title="{{trans('adminlte::adminlte.address')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <label for="addressEnd">{{trans('adminlte::adminlte.address')}}:</label>
+                                        <input type="text" name="addressEnd" id="addressEnd" class="form-control" readonly>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="neighborhoodEnd">{{trans('adminlte::adminlte.neighborhood')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="neighborhoodEnd" id="neighborhoodEnd" class="form-control" readonly title="{{trans('adminlte::adminlte.neighborhood')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <label for="neighborhoodEnd">{{trans('adminlte::adminlte.neighborhood')}}:</label>
+                                        <input type="text" name="neighborhoodEnd" id="neighborhoodEnd" class="form-control" readonly>
                                     </div>
                                 </div>
                                 <div class="box-body with-border">
@@ -119,12 +129,12 @@
                                         <input type="text" name="zipcodeEnd" id="zipcodeEnd" class="form-control cep" title="{{trans('adminlte::adminlte.zipcode')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
                                     </div>
                                     <div class="form-group col-md-2">
-                                        <label for="cityEnd">{{trans('adminlte::adminlte.city')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="cityEnd" id="cityEnd" class="form-control" readonly title="{{trans('adminlte::adminlte.city')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <label for="cityEnd">{{trans('adminlte::adminlte.city')}}:</label>
+                                        <input type="text" name="cityEnd" id="cityEnd" class="form-control" readonly>
                                     </div>
                                     <div class="form-group col-md-1">
-                                        <label for="ufEnd">{{trans('adminlte::adminlte.uf')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="ufEnd" id="ufEnd" class="form-control" maxlength="2" readonly title="{{trans('adminlte::adminlte.uf')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <label for="ufEnd">{{trans('adminlte::adminlte.uf')}}:</label>
+                                        <input type="text" name="ufEnd" id="ufEnd" class="form-control" maxlength="2" readonly>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="numberEnd">{{trans('adminlte::adminlte.number')}}:</label> <span class="required">*</span>
@@ -141,7 +151,16 @@
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="brandTab">
-                                Cadastro3
+                                <div class="box-body with-border">
+                                    <div class="form-group col-md-12">
+                                        <label for="brand">{{trans('adminlte::adminlte.brands')}}:</label> <span class="required">*</span> <i data-toggle="tooltip" data-placement="top" title="" class="fa fa-question-circle" data-original-title="Coloque as Marcas que este cliente compra"></i>
+                                        <select id="brand" name="brand[]" class="form-control select2-multitextarea" title="{{trans('adminlte::adminlte.brands')}}" oninvalid="this.setCustomValidity(alertRequired(this))" multiple required>
+                                            @foreach($brands as $brand)
+                                                <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,7 +173,6 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
 @stop
 
 @section('js')
@@ -172,11 +190,6 @@
                });
             });
         });
-
-        function alertRequired(campo){
-            alert("O campo '"+campo.title+"' é obrigatório");
-            $('#'+campo.id).css('border-color', 'red');
-        }
 
     </script>
 @stop

@@ -13,5 +13,26 @@ class BrandsTableSeeder extends Seeder
             'login_sist' => 'peterson@hotmail.com',
             'password_sist' => '123456',
         ]);
+
+        Brand::create([
+            'name' => 'Avon',
+            'link' => 'https://www.avoncomigo.avon.com.br/widget/avonwg2/#/login',
+            'login_sist' => 'peterson@hotmail.com',
+            'password_sist' => '123456',
+        ]);
+
+        Brand::create([
+            'name' => 'Demillus',
+            'link' => 'https://www.demillus.com.br/portalpedidos/Web',
+            'login_sist' => 'peterson@hotmail.com',
+            'password_sist' => '123456',
+        ]);
+
+        Brand::create([
+            'name' => 'Rommanel',
+            'link' => 'http://www.siteconsultora.com.br/Login.aspx',
+            'login_sist' => 'peterson@hotmail.com',
+            'password_sist' => '123456',
+        ]);
     }
 }
