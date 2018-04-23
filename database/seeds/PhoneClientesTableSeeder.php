@@ -13,7 +13,7 @@ class PhoneClientesTableSeeder extends Seeder
     public function run()
     {
         $tipo = array("0" => "Fixo", "1" => "Celular");
-        $operadora = array("0" => "Oi", "1" => "Claro");
+        $operadora = array("0" => "1", "1" => "2");
         $numero = array("0" => "2596-12", "1" => "96213-45");
 
         for($x=1;$x<21;$x++)

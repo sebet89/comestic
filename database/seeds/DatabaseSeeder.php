@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BrandsTableSeeder::class);
         $this->call(CampaignsTableSeeder::class);
         $this->call(BrandClientesTableSeeder::class);
+        $this->call(TelOperatorTableSeeder::class);
     }
 }

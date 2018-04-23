@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
-use App\Models\AddressCliente;
+use App\Models\TelOperator;
 use App\Models\Brand;
+use App\Models\AddressCliente;
 
 class ClienteController extends Controller
 {
@@ -16,7 +17,8 @@ class ClienteController extends Controller
 
     public function create(){
         $brands = Brand::all();
-        return view('cliente.create', compact('brands'));
+        $telOperators = TelOperator::all();
+        return view('cliente.create', compact('brands','telOperators'));
     }
 
     public function store(){

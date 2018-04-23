@@ -13,7 +13,7 @@ class CreatePhoneClientesTable extends Migration
             $table->integer('id_cliente')->unsigned();
             $table->string('tipo');
             $table->string('numero',15);
-            $table->string('operadora')->nullable();
+            $table->integer('operadora')->nullable()->unsigned();
             $table->text('obs')->nullable();
             $table->timestamps();
 
