@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="tipoTel">{{trans('adminlte::adminlte.type_phone')}}:</label> <span class="required">*</span>
-                                        <select id="tipoTel" name="tipoTel[]" class="form-control select2" title="{{trans('adminlte::adminlte.type_phone')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <select id="tipoTel" name="telefones[0][tipo]" class="form-control select2" title="{{trans('adminlte::adminlte.type_phone')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
                                             <option></option>
                                             <option value="Celular">Celular</option>
                                             <option value="Residência">Residência</option>
@@ -59,20 +59,20 @@
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="numeroTel">{{trans('adminlte::adminlte.number_phone')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="numeroTel[]" id="numeroTel" class="form-control cel_with_ddd" title="{{trans('adminlte::adminlte.number_phone')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <input type="text" name="telefones[0][numero]" id="numeroTel" class="form-control cel_with_ddd" title="{{trans('adminlte::adminlte.number_phone')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="operadoraTel">{{trans('adminlte::adminlte.operator')}}:</label>
-                                        <select id="operadoraTel" name="operadoraTel[]" class="form-control select2">
+                                        <select id="operadoraTel" name="telefones[0][operadora]" class="form-control select2">
                                             <option></option>
                                             @foreach($telOperators as $telOperator)
-                                                <option id="{{$telOperator->id}}">{{$telOperator->name}}</option>
+                                                <option value="{{$telOperator->id}}">{{$telOperator->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="obsTel">{{trans('adminlte::adminlte.obs')}}:</label>
-                                        <input type="text" name="obsTel[]" id="obsTel" class="form-control">
+                                        <input type="text" name="telefones[0][obs]" id="obsTel" class="form-control">
                                     </div>
                                     <div id="telefones"></div>
                                     <div class="form-group col-md-12">
@@ -84,37 +84,37 @@
                                 <div class="box-body with-border">
                                     <div class="form-group col-md-6">
                                         <label for="addressEnd">{{trans('adminlte::adminlte.address')}}:</label>
-                                        <input type="text" name="addressEnd[]" id="addressEnd-0" class="form-control" readonly>
+                                        <input type="text" name="enderecos[0][endereco]" id="addressEnd-0" class="form-control" readonly>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="neighborhoodEnd">{{trans('adminlte::adminlte.neighborhood')}}:</label>
-                                        <input type="text" name="neighborhoodEnd[]" id="neighborhoodEnd-0" class="form-control" readonly>
+                                        <input type="text" name="enderecos[0][bairro]" id="neighborhoodEnd-0" class="form-control" readonly>
                                     </div>
                                 </div>
                                 <div class="box-body with-border">
                                     <div class="form-group col-md-2">
                                         <label for="zipcodeEnd">{{trans('adminlte::adminlte.zipcode')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="zipcodeEnd[]" id="zipcodeEnd-0" class="form-control cep" onBlur="buscarCep(0)" title="{{trans('adminlte::adminlte.zipcode')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <input type="text" name="enderecos[0][cep]" id="zipcodeEnd-0" class="form-control cep" onBlur="buscarCep(0)" title="{{trans('adminlte::adminlte.zipcode')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="cityEnd">{{trans('adminlte::adminlte.city')}}:</label>
-                                        <input type="text" name="cityEnd[]" id="cityEnd-0" class="form-control" readonly>
+                                        <input type="text" name="enderecos[0][cidade]" id="cityEnd-0" class="form-control" readonly>
                                     </div>
                                     <div class="form-group col-md-1">
                                         <label for="ufEnd">{{trans('adminlte::adminlte.uf')}}:</label>
-                                        <input type="text" name="ufEnd[]" id="ufEnd-0" class="form-control" maxlength="2" readonly>
+                                        <input type="text" name="enderecos[0][uf]" id="ufEnd-0" class="form-control" maxlength="2" readonly>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="numberEnd">{{trans('adminlte::adminlte.number')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="numberEnd[]" id="numberEnd-0" class="form-control" title="{{trans('adminlte::adminlte.number')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <input type="text" name="enderecos[0][numero]" id="numberEnd-0" class="form-control" title="{{trans('adminlte::adminlte.number')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="complement">{{trans('adminlte::adminlte.complement')}}:</label>
-                                        <input type="text" name="complement[]" id="complement-0" class="form-control">
+                                        <input type="text" name="enderecos[0][complemento]" id="complement-0" class="form-control">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="obsEnd">{{trans('adminlte::adminlte.obs')}}:</label>
-                                        <input type="text" name="obsEnd[]" id="obsEnd-0" class="form-control">
+                                        <input type="text" name="enderecos[0][obs]" id="obsEnd-0" class="form-control">
                                     </div>
                                 </div>
                                 <div id="endereco"></div>
@@ -173,6 +173,7 @@
         //addEndereco
         $( document ).ready(function(){
             countEndereco = 1;
+            countTelefone = 1
             $('.addEndereco').click(function(){
 
                 divEndereco = $('#endereco');
@@ -187,37 +188,37 @@
                 newDivEndereco += '<div class="box-body with-border">';
                 newDivEndereco += '<div class="form-group col-md-6">';
                 newDivEndereco += '<label for="addressEnd">{{trans('adminlte::adminlte.address')}}:</label>';
-                newDivEndereco += '<input type="text" name="addressEnd[]" id="addressEnd-' + countEndereco + '" class="form-control" readonly>';
+                newDivEndereco += '<input type="text" name="enderecos[' + countEndereco + '][endereco]" id="addressEnd-' + countEndereco + '" class="form-control" readonly>';
                 newDivEndereco += '</div>';
                 newDivEndereco += '<div class="form-group col-md-6">';
                 newDivEndereco += '<label for="neighborhoodEnd">{{trans('adminlte::adminlte.neighborhood')}}:</label>';
-                newDivEndereco += '<input type="text" name="neighborhoodEnd[]" id="neighborhoodEnd-' + countEndereco + '" class="form-control" readonly>';
+                newDivEndereco += '<input type="text" name="enderecos[' + countEndereco + '][bairro]" id="neighborhoodEnd-' + countEndereco + '" class="form-control" readonly>';
                 newDivEndereco += '</div>';
                 newDivEndereco += '</div>';
                 newDivEndereco += '<div class="box-body with-border">';
                 newDivEndereco += '<div class="form-group col-md-2">';
                 newDivEndereco += '<label for="zipcodeEnd">{{trans('adminlte::adminlte.zipcode')}}:</label>';
-                newDivEndereco += '<input type="text" name="zipcodeEnd[]" id="zipcodeEnd-' + countEndereco + '" class="form-control cep" onBlur="buscarCep('+ countEndereco +')">';
+                newDivEndereco += '<input type="text" name="enderecos[' + countEndereco + '][cep]" id="zipcodeEnd-' + countEndereco + '" class="form-control cep" onBlur="buscarCep('+ countEndereco +')">';
                 newDivEndereco += '</div>';
                 newDivEndereco += '<div class="form-group col-md-2">';
                 newDivEndereco += '<label for="cityEnd">{{trans('adminlte::adminlte.city')}}:</label>';
-                newDivEndereco += '<input type="text" name="cityEnd[]" id="cityEnd-' + countEndereco + '" class="form-control" readonly>';
+                newDivEndereco += '<input type="text" name="enderecos[' + countEndereco + '][cidade]" id="cityEnd-' + countEndereco + '" class="form-control" readonly>';
                 newDivEndereco += '</div>';
                 newDivEndereco += '<div class="form-group col-md-1">';
                 newDivEndereco += '<label for="ufEnd">{{trans('adminlte::adminlte.uf')}}:</label>';
-                newDivEndereco += '<input type="text" name="ufEnd[]" id="ufEnd-' + countEndereco + '" class="form-control" maxlength="2" readonly>';
+                newDivEndereco += '<input type="text" name="enderecos[' + countEndereco + '][uf]" id="ufEnd-' + countEndereco + '" class="form-control" maxlength="2" readonly>';
                 newDivEndereco += '</div>';
                 newDivEndereco += '<div class="form-group col-md-2">';
                 newDivEndereco += '<label for="numberEnd">{{trans('adminlte::adminlte.number')}}:</label>';
-                newDivEndereco += '<input type="text" name="numberEnd[]" id="numberEnd-' + countEndereco + '" class="form-control">';
+                newDivEndereco += '<input type="text" name="enderecos[' + countEndereco + '][numero]" id="numberEnd-' + countEndereco + '" class="form-control">';
                 newDivEndereco += '</div>';
                 newDivEndereco += '<div class="form-group col-md-3">';
                 newDivEndereco += '    <label for="complement">{{trans('adminlte::adminlte.complement')}}:</label>';
-                newDivEndereco += '<input type="text" name="complement[]" id="complement-' + countEndereco + '" class="form-control">';
+                newDivEndereco += '<input type="text" name="enderecos[' + countEndereco + '][complemento]" id="complement-' + countEndereco + '" class="form-control">';
                 newDivEndereco += '    </div>';
                 newDivEndereco += '    <div class="form-group col-md-2">';
                 newDivEndereco += '    <label for="obsEnd">{{trans('adminlte::adminlte.obs')}}:</label>';
-                newDivEndereco += '<input type="text" name="obsEnd[]" id="obsEnd-' + countEndereco + '" class="form-control">';
+                newDivEndereco += '<input type="text" name="enderecos[' + countEndereco + '][obs]" id="obsEnd-' + countEndereco + '" class="form-control">';
                 newDivEndereco += '    </div>';
                 newDivEndereco += '    </div>';
 
@@ -243,7 +244,7 @@
 
                 newDivTelefone  +=     '    <div class="form-group col-md-3">';
                 newDivTelefone  +=     '    <label for="tipoTel">{{trans('adminlte::adminlte.type_phone')}}:</label>';
-                newDivTelefone  +=     '<select id="tipoTel" name="tipoTel[]" class="form-control select2">';
+                newDivTelefone  +=     '<select id="tipoTel" name="telefones['+ countTelefone +'][tipo]" class="form-control select2">';
                 newDivTelefone  +=     '    <option></option>';
                 newDivTelefone  +=     '    <option value="Celular">Celular</option>';
                 newDivTelefone  +=     '    <option value="Residência">Residência</option>';
@@ -252,20 +253,20 @@
                 newDivTelefone  +=     '    </div>';
                 newDivTelefone  +=     '    <div class="form-group col-md-3">';
                 newDivTelefone  +=     '    <label for="numeroTel">{{trans('adminlte::adminlte.number_phone')}}:</label>';
-                newDivTelefone  +=     '<input type="text" name="numeroTel[]" id="numeroTel" class="form-control cel_with_ddd">';
+                newDivTelefone  +=     '<input type="text" name="telefones['+ countTelefone +'][numero]" id="numeroTel" class="form-control cel_with_ddd">';
                 newDivTelefone  +=     '    </div>';
                 newDivTelefone  +=     '    <div class="form-group col-md-3">';
                 newDivTelefone  +=     '    <label for="operadoraTel">{{trans('adminlte::adminlte.operator')}}:</label>';
-                newDivTelefone  +=     '<select id="operadoraTel" name="operadoraTel[]" class="form-control select2">';
+                newDivTelefone  +=     '<select id="operadoraTel" name="telefones['+ countTelefone +'][operadora]" class="form-control select2">';
                 newDivTelefone  +=     '    <option></option>';
                 @foreach($telOperators as $telOperator)
-                    newDivTelefone  +=     '<option id="{{$telOperator->id}}">{{$telOperator->name}}</option>';
+                    newDivTelefone  +=     '<option value="{{$telOperator->id}}">{{$telOperator->name}}</option>';
                 @endforeach
                 newDivTelefone  +=     '</select>';
                 newDivTelefone  +=     '    </div>';
                 newDivTelefone  +=     '    <div class="form-group col-md-3">';
                 newDivTelefone  +=     '    <label for="obsTel">{{trans('adminlte::adminlte.obs')}}:</label>';
-                newDivTelefone  +=     '<input type="text" name="obsTel[]" id="obsTel" class="form-control">';
+                newDivTelefone  +=     '<input type="text" name="telefones['+ countTelefone +'][obs]" id="obsTel" class="form-control">';
                 newDivTelefone  +=     '    </div>';
 
 
@@ -273,6 +274,8 @@
                 //-------------------------
 
                 divTelefone.append(newDivTelefone);
+
+                countTelefone++;
 
                 $('.cel_with_ddd').mask('(00) 00000-0000');
             });

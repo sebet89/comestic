@@ -15,7 +15,7 @@ class CreateAddressClientesTable extends Migration
     {
         Schema::create('address_clientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_cliente')->unsigned();
+            $table->integer('cliente_id')->unsigned();
             $table->string('endereco');
             $table->string('bairro');
             $table->string('cidade',28);
@@ -26,7 +26,7 @@ class CreateAddressClientesTable extends Migration
             $table->string('obs')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
         });
     }
 

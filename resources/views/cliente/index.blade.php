@@ -16,7 +16,9 @@
 @stop
 
 @section('content')
-
+    @if(Session::get('message'))
+        @include('layouts.messages')
+    @endif
     <div class="row">
         <div class="col-md-12">
             <div class="box box-solid">

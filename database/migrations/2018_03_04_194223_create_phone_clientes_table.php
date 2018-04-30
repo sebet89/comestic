@@ -10,14 +10,14 @@ class CreatePhoneClientesTable extends Migration
     {
         Schema::create('phone_clientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_cliente')->unsigned();
+            $table->integer('cliente_id')->unsigned();
             $table->string('tipo');
             $table->string('numero',15);
             $table->integer('operadora')->nullable()->unsigned();
             $table->text('obs')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
         });
     }
 

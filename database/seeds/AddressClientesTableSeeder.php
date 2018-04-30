@@ -11,7 +11,7 @@ class AddressClientesTableSeeder extends Seeder
             for ($j = 0; $j < 2; $j++) {
                 if ($j == 0) {
                     AddressCliente::create([
-                        'id_cliente' => $x,
+                        'cliente_id' => $x,
                         'endereco' => 'Endereco Teste ' . $j,
                         'bairro' => 'Bairro Teste ' . $j,
                         'cidade' => 'Cidade Teste ' . $j,
@@ -23,7 +23,7 @@ class AddressClientesTableSeeder extends Seeder
                     ]);
                 } else {
                     AddressCliente::create([
-                        'id_cliente' => $x,
+                        'cliente_id' => $x,
                         'endereco' => 'Endereco Teste ' . $j,
                         'bairro' => 'Bairro Teste ' . $j,
                         'cidade' => 'Cidade Teste ' . $j,
