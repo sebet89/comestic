@@ -62,6 +62,11 @@
         $('[for='+campo.id+']').css('color', 'red');
     }
 
+    function clearAlert(campo){
+        $('[for='+campo.id+']').css('color', 'black');
+        return '';
+    }
+
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });

@@ -37,11 +37,11 @@
                                 <div class="box-body with-border">
                                     <div class="form-group col-md-6">
                                         <label for="name">{{trans('adminlte::adminlte.full_name')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="name" id="name" class="form-control" title="{{trans('adminlte::adminlte.full_name')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <input type="text" name="name" id="name" class="form-control" title="{{trans('adminlte::adminlte.full_name')}}" oninvalid="setCustomValidity(alertRequired(this))" oninput="setCustomValidity(clearAlert(this))" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="email">{{trans('adminlte::adminlte.email')}}:</label> <span class="required">*</span>
-                                        <input type="email" name="email" id="email" class="form-control" title="{{trans('adminlte::adminlte.email')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <input type="email" name="email" id="email" class="form-control" title="{{trans('adminlte::adminlte.email')}}" oninvalid="setCustomValidity(alertRequired(this))" oninput="setCustomValidity(clearAlert(this))" required>
                                     </div>
                                 </div>
                                 <div class="box-body with-border">
@@ -49,17 +49,17 @@
                                         <label for="titleTel"><h4>{{trans('adminlte::adminlte.phones')}}:</h4></label>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="tipoTel">{{trans('adminlte::adminlte.type_phone')}}:</label> <span class="required">*</span>
-                                        <select id="tipoTel" name="telefones[0][tipo]" class="form-control select2" title="{{trans('adminlte::adminlte.type_phone')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <label for="tipoTel">{{trans('adminlte::adminlte.type_phone')}}:</label>
+                                        <select id="tipoTel" name="telefones[0][tipo]" class="form-control select2">
                                             <option></option>
-                                            <option value="Celular">Celular</option>
+                                            <option value="Celular" selected>Celular</option>
                                             <option value="Residência">Residência</option>
                                             <option value="Trabalho">Trabalho</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="numeroTel">{{trans('adminlte::adminlte.number_phone')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="telefones[0][numero]" id="numeroTel" class="form-control cel_with_ddd" title="{{trans('adminlte::adminlte.number_phone')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <input type="text" name="telefones[0][numero]" id="numeroTel" class="form-control cel_with_ddd" title="{{trans('adminlte::adminlte.number_phone')}}" oninvalid="setCustomValidity(alertRequired(this))" oninput="setCustomValidity(clearAlert(this))" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="operadoraTel">{{trans('adminlte::adminlte.operator')}}:</label>
@@ -76,7 +76,7 @@
                                     </div>
                                     <div id="telefones"></div>
                                     <div class="form-group col-md-12">
-                                        <button type="button" id="btnAddTelefone" class="btn btn-inverse btn-block">Adicionar telefone</button>
+                                        <button type="button" id="btnAddTelefone" class="btn btn-inverse btn-block">{{trans('adminlte::adminlte.phrases.add_phone')}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -93,8 +93,8 @@
                                 </div>
                                 <div class="box-body with-border">
                                     <div class="form-group col-md-2">
-                                        <label for="zipcodeEnd">{{trans('adminlte::adminlte.zipcode')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="enderecos[0][cep]" id="zipcodeEnd-0" class="form-control cep" onBlur="buscarCep(0)" title="{{trans('adminlte::adminlte.zipcode')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <label for="zipcodeEnd-0">{{trans('adminlte::adminlte.zipcode')}}:</label> <span class="required">*</span>
+                                        <input type="text" name="enderecos[0][cep]" id="zipcodeEnd-0" class="form-control cep" onBlur="buscarCep(0)" title="{{trans('adminlte::adminlte.zipcode')}}" oninvalid="setCustomValidity(alertRequired(this))" oninput="setCustomValidity(clearAlert(this))" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="cityEnd">{{trans('adminlte::adminlte.city')}}:</label>
@@ -105,8 +105,8 @@
                                         <input type="text" name="enderecos[0][uf]" id="ufEnd-0" class="form-control" maxlength="2" readonly>
                                     </div>
                                     <div class="form-group col-md-2">
-                                        <label for="numberEnd">{{trans('adminlte::adminlte.number')}}:</label> <span class="required">*</span>
-                                        <input type="text" name="enderecos[0][numero]" id="numberEnd-0" class="form-control" title="{{trans('adminlte::adminlte.number')}}" oninvalid="this.setCustomValidity(alertRequired(this))" required>
+                                        <label for="numberEnd-0">{{trans('adminlte::adminlte.number')}}:</label> <span class="required">*</span>
+                                        <input type="text" name="enderecos[0][numero]" id="numberEnd-0" class="form-control" title="{{trans('adminlte::adminlte.number')}}" oninvalid="setCustomValidity(alertRequired(this))" oninput="setCustomValidity(clearAlert(this))" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="complement">{{trans('adminlte::adminlte.complement')}}:</label>
@@ -119,14 +119,14 @@
                                 </div>
                                 <div id="endereco"></div>
                                 <div class="col-sm-12">
-                                    <button type="button" class="btn btn-inverse btn-block addEndereco">Adicionar outro endereço</button>
+                                    <button type="button" class="btn btn-inverse btn-block addEndereco">{{trans('adminlte::adminlte.phrases.add_another_address')}}</button>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="brandTab">
                                 <div class="box-body with-border">
                                     <div class="form-group col-md-12">
-                                        <label for="brand">{{trans('adminlte::adminlte.brands')}}:</label> <span class="required">*</span> <i data-toggle="tooltip" data-placement="top" title="" class="fa fa-question-circle" data-original-title="Coloque as Marcas que este cliente compra"></i>
-                                        <select id="brand" name="brand[]" class="form-control select2-multitextarea" title="{{trans('adminlte::adminlte.brands')}}" oninvalid="this.setCustomValidity(alertRequired(this))" multiple required>
+                                        <label for="brand">{{trans('adminlte::adminlte.brands')}}:</label> <span class="required">*</span> <i data-toggle="tooltip" data-placement="top" title="" class="fa fa-question-circle" data-original-title="{{trans('adminlte::adminlte.phrases.place_the_marks_that_this_customer_buys')}}"></i>
+                                        <select id="brand" name="brand[]" class="form-control select2-multitextarea" title="{{trans('adminlte::adminlte.brands')}}" oninvalid="setCustomValidity(alertRequired(this))" oninput="setCustomValidity(clearAlert(this))" multiple required>
                                             @foreach($brands as $brand)
                                                 <option value="{{$brand->id}}">{{$brand->name}}</option>
                                             @endforeach
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success btn-block">Salvar</button>
+                <button type="submit" class="btn btn-success btn-block">{{trans('adminlte::adminlte.save')}}</button>
             </form>
         </div>
     </div>
@@ -246,7 +246,7 @@
                 newDivTelefone  +=     '    <label for="tipoTel">{{trans('adminlte::adminlte.type_phone')}}:</label>';
                 newDivTelefone  +=     '<select id="tipoTel" name="telefones['+ countTelefone +'][tipo]" class="form-control select2">';
                 newDivTelefone  +=     '    <option></option>';
-                newDivTelefone  +=     '    <option value="Celular">Celular</option>';
+                newDivTelefone  +=     '    <option value="Celular" selected>Celular</option>';
                 newDivTelefone  +=     '    <option value="Residência">Residência</option>';
                 newDivTelefone  +=     '    <option value="Trabalho">Trabalho</option>';
                 newDivTelefone  +=     '    </select>';

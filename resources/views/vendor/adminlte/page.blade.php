@@ -114,7 +114,9 @@
 
             <!-- Main content -->
             <section class="content">
-
+                @if(Session::get('message'))
+                    @include('layouts.messages')
+                @endif
                 @yield('content')
 
             </section>

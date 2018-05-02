@@ -40,6 +40,14 @@ return [
     'city'                        => 'Cidade',
     'uf'                          => 'UF',
     'complement'                  => 'Complemento',
+    'save'                        => 'Salvar',
+
+
+    'phrases' => [
+        'place_the_marks_that_this_customer_buys' => 'Coloque as Marcas que este cliente compra.',
+        'add_another_address' => 'Adicionar outro endereço.',
+        'add_phone' => 'Adicionar telefone.',
+    ],
 
 
     'role' => [

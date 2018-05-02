@@ -22,24 +22,30 @@ class ClienteController extends Controller
 
     public function store(Request $request){
 
-        $cliente = Cliente::create($request->except('_token','telefones','enderecos','brand'));
+        $validateCliente = Cliente::where('email','=',$request->email)->count();
+        if($validateCliente == 0) {
 
-        //Telefone
-        foreach($request->telefones as $tel){
-            if(!is_null($tel['tipo']) && !is_null($tel['numero']))
-                $cliente->Phone()->create($tel);
+            $cliente = Cliente::create($request->except('_token', 'telefones', 'enderecos', 'brand'));
+
+            //Telefone
+            foreach ($request->telefones as $tel) {
+                if (!is_null($tel['tipo']) && !is_null($tel['numero']))
+                    $cliente->Phone()->create($tel);
+            }
+
+            //Endereço
+            foreach ($request->enderecos as $enderecos) {
+                if (!is_null($enderecos['endereco']) && !is_null($enderecos['bairro']) && !is_null($enderecos['cep']) && !is_null($enderecos['cidade']) && !is_null($enderecos['uf']) && !is_null($enderecos['numero']))
+                    $cliente->Address()->create($enderecos);
+            }
+
+            //Marcas
+            $cliente->Brands()->sync($request->brand);
+
+            return redirect()->route('cliente.index')->with(['message' => 'Cliente criado com sucesso!', 'type' => 'success', 'icon' => 'check']);
+        }else{
+            return redirect()->back()->with(['message' => 'O Email' . $request->email . ' ja esta sendo usado por um outro Cliente.', 'type' => 'danger', 'icon' => 'times']);
         }
-
-        //Endereço
-        foreach($request->enderecos as $enderecos){
-            if(!is_null($enderecos['endereco']) && !is_null($enderecos['bairro']) && !is_null($enderecos['cep']) && !is_null($enderecos['cidade']) && !is_null($enderecos['uf']) && !is_null($enderecos['numero']))
-                $cliente->Address()->create($enderecos);
-        }
-
-        //Marcas
-        $cliente->Brands()->sync($request->brand);
-
-        return redirect()->route('cliente.index')->with(['message' => 'Cliente criado com sucesso!', 'type' => 'success', 'icon' => 'check']);
     }
 
     public function show(){
